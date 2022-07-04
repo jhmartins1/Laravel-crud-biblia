@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('web')->group(function () {
+
+    Route::get('/', function () {
+        // return view('welcome');
+        return 'Olá';
+    })->name('variosusuarios');
+
+    Route::get('/{id}', function () {
+        return 'Olá essa tem um id';
+    })->name('apenasumusuario');
 });
